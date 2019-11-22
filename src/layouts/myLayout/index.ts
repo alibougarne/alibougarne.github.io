@@ -5,8 +5,8 @@ import { getModule } from 'vuex-module-decorators';
 import LayoutStoreModule from './LayoutStoreModule';
 @Component
 export default class MyLayoutt extends Vue {
-  private  store = getModule(LayoutStoreModule);
-  private   copyright: string = `&copy; Made with ❤️ by <b style="color:black">Dentali</b> ${new Date().getFullYear()}`;
+  private store = getModule(LayoutStoreModule);
+  private copyright: string = `&copy; Made with ❤️ by <b style="color:$grey-8">Ali Bougarne</b> ${new Date().getFullYear()}`;
   private get leftDrawerOpen() {
     return this.store.leftDrawerOpen;
   }
@@ -16,9 +16,9 @@ export default class MyLayoutt extends Vue {
   }
   // leftDrawerOpen: boolean = false;
   private search: string = '';
-  private links1: object[]= [
+  private links1: object[] = [
     { icon: 'home', text: 'Home' },
-    { icon: 'whatshot', text: 'Trending' },
+    { icon: 'code ', text: 'Work',path:'work' },
     { icon: 'subscriptions', text: 'Subscriptions' }
   ];
   private links2: object[] = [
@@ -48,10 +48,17 @@ export default class MyLayoutt extends Vue {
     { text: 'Advertise' },
     { text: 'Developers' }
   ];
-  private  buttons2: object[] = [
+  private buttons2: object[] = [
     { text: 'Terms' },
     { text: 'Privacy' },
     { text: 'Policy & Safety' },
     { text: 'Test new features' }
   ];
+
+  public mounted(): void {
+    (document as any).querySelector("body").classList.add(this.$route.name);
+    console.log('💩💩💩 ', this.$q);
+    console.log('💩 ', this.$route.name);
+    console.log('💩 ', this.$router);
+  }
 }

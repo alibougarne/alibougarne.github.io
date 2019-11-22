@@ -2,7 +2,8 @@
 /* eslint-disable no-undef */
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path');
 module.exports = function(ctx) {
   return {
     // Quasar looks for *.js files by default
@@ -43,7 +44,7 @@ module.exports = function(ctx) {
       //            (fastest compile time; minimum bundle size; most tedious)
       // * true   - Import everything from Quasar
       //            (not treeshaking Quasar; biggest bundle size; convenient)
-      all: 'true',
+      all: 'false',
 
       components: [
         'QBtn',
@@ -69,6 +70,7 @@ module.exports = function(ctx) {
         'QScrollArea',
         'QList',
         'QSpace',
+        'QParallax',
       ],
       directives: ['Ripple'],
 
@@ -100,6 +102,12 @@ module.exports = function(ctx) {
             formatter: require('eslint').CLIEngine.getFormatter('stylish')
           }
         });
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing alias
+    
+          // Add your own alias like this
+          '@': path.resolve(__dirname, './src'),
+        }
       }
     },
 
@@ -112,7 +120,11 @@ module.exports = function(ctx) {
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: 'all',
+    animations: [
+      //'all',
+      'fadeIn',
+      'fadeOut'
+    ],
 
     // https://quasar.dev/quasar-cli/developing-ssr/configuring-ssr
     ssr: {

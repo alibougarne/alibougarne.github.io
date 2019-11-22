@@ -1,5 +1,6 @@
-<q-layout view="hHh lpR fFf" class="bg-grey-1">
-    <q-header elevated class="bg-white text-grey-8 q-py-xs" height-hint="58">
+<q-layout view="hHh lpR fFf" class="bg-transparent">
+    <div class="landing__space fixed"></div>
+    <q-header :elevated="false" class="bg-transparent-gradient text-white q-py-xs" height-hint="58">
       <q-toolbar>
         <q-btn
           flat
@@ -11,26 +12,29 @@
         />
 
         <q-btn flat no-caps no-wrap class="q-ml-xs" v-if="$q.screen.gt.xs">
-          <q-icon name="fab fa-youtube" color="red" size="28px" />
-          <q-toolbar-title shrink class="text-weight-bold">YouTube</q-toolbar-title>
+          <!-- <q-icon name="fab fa-youtube" color="red" size="28px" /> -->
+          <q-toolbar-title shrink class="text-weight-bold">🔥 Ali BOUGARNE</q-toolbar-title>
         </q-btn>
 
         <q-space />
 
         <div class="YL__toolbar-input-container row no-wrap">
+            <!-- <q-input  v-model="text" label="Filled" /> -->
           <q-input
-            dense
-            outlined
+            dark 
             square
+            standout 
             v-model="search"
             placeholder="Search"
-            class="bg-white col"
+            class="bg-portfolio col  text-white"
           />
           <q-btn
-            class="YL__toolbar-input-btn"
-            color="grey-3"
-            text-color="grey-8"
+            style="border-radius: 0;"
+            class=" bg-transparent"
+            color="white"
+            text-color="white"
             icon="search"
+            flat
             unelevated
           />
         </div>
@@ -65,17 +69,17 @@
       v-model="leftDrawerOpen"
       show-if-above
       bordered
-      content-class="bg-grey-2"
+      content-class="bg-transparent"
       :width="240"
     >
       <q-scroll-area class="fit">
         <q-list padding>
-          <q-item v-for="link in links1" :key="link.text" v-ripple clickable>
+          <q-item v-for="link in links1" :key="link.text" v-ripple clickable @click="$router.push(link.path)">
             <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
+              <q-icon color="white" :name="link.icon" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
+              <q-item-label class="text-white">{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
 
@@ -83,23 +87,23 @@
 
           <q-item v-for="link in links2" :key="link.text" v-ripple clickable>
             <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
+              <q-icon color="white" :name="link.icon" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
+              <q-item-label color="white">{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-separator class="q-mt-md q-mb-xs" />
 
-          <q-item-label header class="text-weight-bold text-uppercase">More from Youtube</q-item-label>
+          <q-item-label color="white" header class="text-weight-bold text-uppercase">More from Youtube</q-item-label>
 
           <q-item v-for="link in links3" :key="link.text" v-ripple clickable>
             <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
+              <q-icon color="white" :name="link.icon" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
+              <q-item-label color="white">{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
 
@@ -107,16 +111,16 @@
 
           <q-item v-for="link in links4" :key="link.text" v-ripple clickable>
             <q-item-section avatar>
-              <q-icon color="grey" :name="link.icon" />
+              <q-icon color="white" :name="link.icon" />
             </q-item-section>
             <q-item-section>
-              <q-item-label>{{ link.text }}</q-item-label>
+              <q-item-label class="text-white">{{ link.text }}</q-item-label>
             </q-item-section>
           </q-item>
 
           <q-separator class="q-mt-md q-mb-lg" />
 
-          <div class="q-px-md text-grey-9">
+          <div class="q-px-md text-white-9">
             <div class="row items-center q-gutter-x-sm q-gutter-y-xs">
               <a
                 v-for="button in buttons1"
@@ -145,7 +149,7 @@
     </q-page-container>
 
     
-    <q-footer elevated bordered class="bg-white text-caption text-grey-8 q-pa-sm">
+    <q-footer bordered class="bg-portfolio text-caption text-white q-pa-md">
         <div v-html="copyright"></div>
     </q-footer>
   </q-layout>

@@ -12,12 +12,14 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
+    "@mdi/font": "^4.7.95",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.18.1",
     "quasar": "^1.0.0",
     "vue-class-component": "^7.1.0",
     "vue-i18n": "^8.0.0",
-    "vue-property-decorator": "^8.3.0"
+    "vue-property-decorator": "^8.3.0",
+    "vuex-class-modules": "^1.1.2"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

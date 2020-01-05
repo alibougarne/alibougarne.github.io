@@ -7,9 +7,18 @@ import Axios, { AxiosResponse } from 'axios';
 @Component({
   components: {}
 })
-export default class TagComponent extends Vue { 
+export default class ProjectDetailComponent extends Vue { 
   @Prop() 
   public tag?:Tag;
+
+  public getTagImage(path:string):string{
+    let imgUrl = '';
+    Axios.get('/api'+path).then((response:AxiosResponse) =>{
+      console.log(response.data.source_url);
+      imgUrl = response.data.source_url
+    })
+    return imgUrl;
+  }
   
   public mounted():void{
   }

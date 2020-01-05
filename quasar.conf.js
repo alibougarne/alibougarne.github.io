@@ -73,11 +73,17 @@ module.exports = function(ctx) {
         'QSpace',
         'QParallax',
         'QImg',
+        'QCard',
       ],
       directives: ['Ripple'],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Loading'
+      ],
+      config: {
+        loading: { /* Loading defaults */ }
+      }
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie

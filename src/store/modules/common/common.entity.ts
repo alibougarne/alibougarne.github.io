@@ -1,5 +1,5 @@
 export class Common {
-  public id?: number;
+  public id?: string;
   public createdAt?: Date;
   public updatedAt?: Date;
 }

@@ -8,6 +8,7 @@ import TagComponent from '@/components/tag'
 })
 export default class PageIndex extends Vue {
   public tags: Tag[] = [];
+  
   public async mounted(): Promise<void>{
     this.tags = await tagModule.loadTags();
     console.log('tags for page tags: ',this.tags)

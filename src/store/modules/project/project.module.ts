@@ -15,7 +15,7 @@ class ProjectModule extends VuexModule {
 
   // actions
   @Action
-  public async loadProjectsPerTag(tagId:number):Promise<Project[]>{
+  public async loadProjectsPerTag(tagId:string):Promise<Project[]>{
     let projects:Project[]=[];
     projects = await this.projectService.loadProjectsPerTag(tagId);
     this.setProjects(projects);

@@ -74,6 +74,9 @@ module.exports = function(ctx) {
         'QParallax',
         'QImg',
         'QCard',
+        'QForm',
+        'QToggle',
+        'QUploader',
       ],
       directives: ['Ripple'],
 
@@ -132,7 +135,7 @@ module.exports = function(ctx) {
         }
       },
       // https: true,
-      // port: 8080,
+      port: 8085,
       open: true // opens browser window automatically
     },
 

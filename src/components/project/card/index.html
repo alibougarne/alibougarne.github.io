@@ -1,5 +1,12 @@
-  <q-card class="my-card col-xs-12 col-md-3 q-ma-md" flat>
-    <img src="https://cdn.quasar.dev/img/parallax2.jpg" />
+<div class=" col-xs-12 col-md-3 q-pa-md">
+<q-card class="my-card" flat>
+    <!-- <img src="https://cdn.quasar.dev/img/parallax2.jpg" /> -->
+    <q-img
+    v-if="url !== null"
+    :ratio="1"
+    style="max-width: 100%"
+    :placeholder-src="imgHolder"
+  />
     <q-list>
       <q-item clickable>
         <q-item-section avatar>
@@ -35,3 +42,4 @@
       </q-item>
     </q-list>
   </q-card>
+</div>

@@ -2,12 +2,26 @@ import { RouteConfig } from 'vue-router'
 
 const routes: RouteConfig[] = [
   {
-    path: '/',
+    path: '',
     component: () => import('layouts/MyLayout/MyLayout.vue'),
-    // component: () => import('layouts/MyLayout.vue'),
     children: [
-      { name:'home',path: '', component: () => import('pages/home/Index.vue') },
-      { name:'work',path: 'work', component: () => import('pages/work/Index.vue') }
+      { name: 'Home', path: '/', component: () => import('pages/home/Index.vue') },
+      { name: 'Projects', path: '/projects', component: () => import('pages/home/Index.vue') },
+      {
+        name: 'Tags',
+        path: '/tags',
+        component: () => import('pages/tags/list/Index.vue'),
+      },
+      {
+        name: 'CreateTag',
+        path: '/tags/create',
+        component: () => import('pages/tags/create/Index.vue'),
+      },
+      {
+        name: 'ProjectsPerTag',
+        path: '/tags/:id',
+        component: () => import('pages/projects/Index.vue'),
+      }
     ]
   }
 ]

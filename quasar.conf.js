@@ -5,6 +5,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 module.exports = function(ctx) {
+  console.log(ctx)
   return {
     // Quasar looks for *.js files by default
     sourceFiles: {
@@ -22,7 +23,7 @@ module.exports = function(ctx) {
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
       // 'ionicons-v4',
-      // 'mdi-v4',
+      'mdi-v4',
       // 'fontawesome-v5',
       // 'eva-icons',
       // 'themify',
@@ -71,11 +72,21 @@ module.exports = function(ctx) {
         'QList',
         'QSpace',
         'QParallax',
+        'QImg',
+        'QCard',
+        'QForm',
+        'QToggle',
+        'QUploader',
       ],
       directives: ['Ripple'],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Loading'
+      ],
+      config: {
+        loading: { /* Loading defaults */ }
+      }
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -113,8 +124,18 @@ module.exports = function(ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
+      proxy: {
+        // proxy all requests starting with /api to jsonplaceholder
+        '/api': {
+          target: 'http://localhost:3001',
+          changeOrigin: true,
+          pathRewrite: {
+            '^/api': ''
+          }
+        }
+      },
       // https: true,
-      // port: 8080,
+      port: 8085,
       open: true // opens browser window automatically
     },
 
@@ -203,6 +224,7 @@ module.exports = function(ctx) {
         // https://www.electron.build/configuration/configuration
         // appId: 'portfolio'
       }
-    }
+    },
+
   };
 };

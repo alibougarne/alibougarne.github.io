@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import{Prop} from 'vue-property-decorator';
-import Axios, { AxiosResponse } from 'axios';
 import Project from '@/store/modules/project/project.entity';
+import TagComponent from '@/components/tag'
 import imageHolder from './imageHolder'
 
 @Component({
-  components: {}
+  components: {TagComponent}
 })
 export default class ProjectCardComponent extends Vue { 
   @Prop() 
@@ -14,5 +14,7 @@ export default class ProjectCardComponent extends Vue {
   public imgHolder = imageHolder;
 
   public mounted():void{
+    console.log('%c⧭ project card: project====>', 'color: #00e600', this.project);
+
   }
 }

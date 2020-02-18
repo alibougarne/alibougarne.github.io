@@ -2,8 +2,8 @@
   <q-btn
     class="q-mr-sm"
     :label="'#'+tag.hashtag"
-    v-bind:style="{ backgroundColor: '#'+tag.backgroundColor, color: '#'+tag.textColor }"
-    @click="$router.push('/tags/'+tag.id).catch(err => {})"
+    :style="{ backgroundColor: '#'+tag.backgroundColor, color: '#'+tag.textColor }"
+    @click="$router.push('tags/'+tag.id).catch(err => {})"
   >
     <q-tooltip content-class="merzaq" :value="false" text-white>
       <div>

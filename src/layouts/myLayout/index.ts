@@ -28,10 +28,10 @@ export default class MyLayout extends Vue {
     { icon: 'mdi-tablet-cellphone ', text: 'Projects',path:'/projects' }
   ];
   private links2: object[] = [
-    { icon: 'folder', text: 'Library' },
-    { icon: 'restore', text: 'History' },
-    { icon: 'watch_later', text: 'Watch later' },
-    { icon: 'thumb_up_alt', text: 'Liked videos' }
+    { icon: 'mdi-linkedin', text: 'LinkedIn', color:'#0077b5',link:'https://www.linkedin.com/in/ali-bougarne-572470117/' },
+    { icon: 'mdi-gmail', text: 'Gmail', color:'#aa3528',link:'mailto:bougarne.ali@gmail.com' },
+    { icon: 'mdi-twitter', text: 'Twitter', color:'#1da1f2',link:'#' },
+    { icon: 'mdi-facebook', text: 'Facebook', color:'#4267b2',link:'#' },
   ];
   private links3: object[] = [
     { icon: 'fab fa-youtube', text: 'YouTube Premium' },

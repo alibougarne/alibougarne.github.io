@@ -43,13 +43,35 @@
 
         <q-separator class="q-my-md" />
 
-        <q-item v-for="link in links2" :key="link.text" v-ripple clickable>
-          <q-item-section avatar>
-            <q-icon color="white" :name="link.icon" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label color="white">{{ link.text }}</q-item-label>
-          </q-item-section>
+        <q-item
+          v-for="link in links2"
+          :key="link.text"
+          v-ripple
+          clickable
+          class="social--media"
+        >
+            <q-btn
+              type="a"
+              unelevated
+              :href="link.link"
+              target="_blank"
+              color="transparent"
+              :icon="link.icon"
+              :style="{color: `${link.color} !important`}"
+              class="full-width"
+              :ripple="false"
+            >
+            </q-btn>
+            <!-- <q-icon :name="link.icon"  /> -->
+            <!-- <a :href="link.link" target="_blank"> </a> -->
+          <q-tooltip
+            anchor="center right"
+            self="center left"
+            content-class="bg-amber text-white shadow-4"
+            :offset="[10, 10]"
+          >
+            {{ link.text }}
+          </q-tooltip>
         </q-item>
         <q-separator class="q-mt-md q-mb-xs" />
       </q-list>

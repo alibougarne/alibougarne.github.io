@@ -18,7 +18,7 @@
 .q-layout.bg-projectspertag 
   background: #02013f
 .currentMenu
-  color: darkgoldenrod !important
+  color: darkgoldenrod !important;
 .bg-transparent
   .q-drawer
     background: transparent
@@ -41,7 +41,7 @@
     &:hover
       color: #000
 .bg-portfolio
-  background: #fdfdfd26 !important
+  background: #fdfdfd26 !important;
 .bg-transparent-gradient
   background: linear-gradient(180deg,#000,transparent)
 .landing
@@ -56,7 +56,12 @@
   animation: logo-rotate 200s linear infinite
   background-size: 240px
   backface-visibility: visible
-  background-image: url(data:image/svg+xmlbase64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTA2IDkwaDJ2MmgtMnpNNzQgNjNoMXYxaC0xek0yMyA2NmgxdjFoLTF6TTUwIDExMGgxdjFoLTF6TTYzIDEyOGgxdjFoLTF6TTQ1IDE0OWgxdjFoLTF6TTkyIDE1MWgxdjFoLTF6TTU4IDhoMXYxaC0xek0xNDcgMzNoMnYyaC0yek05MSA0M2gxdjFoLTF6TTE2OSAyOWgxdjFoLTF6TTE4MiAxOWgxdjFoLTF6TTE2MSA1OWgxdjFoLTF6TTEzOCA5NWgxdjFoLTF6TTE5OSA3MWgzdjNoLTN6TTIxMyAxNTNoMnYyaC0yek0xMjggMTYzaDF2MWgtMXpNMjA1IDE3NGgxdjFoLTF6TTE1MiAyMDBoMXYxaC0xek01MiAyMTFoMnYyaC0yek0wIDE5MWgxdjFIMHpNMTEwIDE4NGgxdjFoLTF6Ii8+PC9zdmc+)
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTA2IDkwaDJ2MmgtMnpNNzQgNjNoMXYxaC0xek0yMyA2NmgxdjFoLTF6TTUwIDExMGgxdjFoLTF6TTYzIDEyOGgxdjFoLTF6TTQ1IDE0OWgxdjFoLTF6TTkyIDE1MWgxdjFoLTF6TTU4IDhoMXYxaC0xek0xNDcgMzNoMnYyaC0yek05MSA0M2gxdjFoLTF6TTE2OSAyOWgxdjFoLTF6TTE4MiAxOWgxdjFoLTF6TTE2MSA1OWgxdjFoLTF6TTEzOCA5NWgxdjFoLTF6TTE5OSA3MWgzdjNoLTN6TTIxMyAxNTNoMnYyaC0yek0xMjggMTYzaDF2MWgtMXpNMjA1IDE3NGgxdjFoLTF6TTE1MiAyMDBoMXYxaC0xek01MiAyMTFoMnYyaC0yek0wIDE5MWgxdjFIMHpNMTEwIDE4NGgxdjFoLTF6Ii8+PC9zdmc+)
+.landing__space-second 
+  background-size: 180px
+  animation: logo-rotate-opacity 120s linear infinite
+  filter: sepia(100) saturate(10)
+
 .social--media
   background: rgba(255, 255, 255, 0.05)
   padding: 10px 0
@@ -74,3 +79,14 @@
 @keyframes logo-rotate
   to
     transform: rotate(-360deg)
+
+@keyframes logo-rotate-opacity
+  0%
+    transform: rotate(0deg)
+    opacity: .3
+  50%
+    transform: rotate(-180deg)
+    opacity: 0
+  100%
+    transform: rotate(-360deg)
+    opacity: .3

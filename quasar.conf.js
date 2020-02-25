@@ -127,7 +127,7 @@ module.exports = function(ctx) {
       proxy: {
         // proxy all requests starting with /api to jsonplaceholder
         '/api': {
-          target: 'http://localhost:3001',
+          target: 'https://portfolio-nest-api.herokuapp.com',
           changeOrigin: true,
           pathRewrite: {
             '^/api': ''

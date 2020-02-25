@@ -1,6 +1,6 @@
 # One for All Portfolio (portfolio)
 
-Ali Bougarne Portfolio
+Ali Bougarne Portfolio V1
 
 ## Install the dependencies
 ```bash

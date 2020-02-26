@@ -5,7 +5,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 module.exports = function(ctx) {
-  console.log(ctx)
+  console.log(ctx);
   return {
     // Quasar looks for *.js files by default
     sourceFiles: {
@@ -76,16 +76,16 @@ module.exports = function(ctx) {
         'QCard',
         'QForm',
         'QToggle',
-        'QUploader',
+        'QUploader'
       ],
       directives: ['Ripple'],
 
       // Quasar plugins
-      plugins: [
-        'Loading'
-      ],
+      plugins: ['Loading'],
       config: {
-        loading: { /* Loading defaults */ }
+        loading: {
+          /* Loading defaults */
+        }
       }
     },
 
@@ -95,6 +95,7 @@ module.exports = function(ctx) {
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
     build: {
       scopeHoisting: true,
+      vueCompiler: true,
       // vueRouterMode: 'history',
       // showProgress: false,
       // gzip: true,
@@ -115,10 +116,11 @@ module.exports = function(ctx) {
         });
         cfg.resolve.alias = {
           ...cfg.resolve.alias, // This adds the existing alias
-    
           // Add your own alias like this
-          '@': path.resolve(__dirname, './src'),
-        }
+          '@': path.resolve(__dirname, './src')
+        };
+        // cfg.mode = 'production';
+        // console.log('cfg.resolve.alias ===> ', cfg);
       }
     },
 
@@ -224,7 +226,6 @@ module.exports = function(ctx) {
         // https://www.electron.build/configuration/configuration
         // appId: 'portfolio'
       }
-    },
-
+    }
   };
 };

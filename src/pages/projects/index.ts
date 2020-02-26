@@ -3,7 +3,6 @@ import Component from 'vue-class-component';
 import { projectModule } from '@/store/modules/project/project.module';
 import Project from '~/src/store/modules/project/project.entity';
 import ProjectCardComponent from '@/components/project/card'
-import { error } from 'util';
 @Component({
   components: { ProjectCardComponent }
 })

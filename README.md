@@ -1,6 +1,7 @@
 # One for All Portfolio (portfolio)
 
-Ali Bougarne Portfolio
+Ali Bougarne Portfolio V1
+project made with vue js and Quasar
 
 ## Install the dependencies
 ```bash

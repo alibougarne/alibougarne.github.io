@@ -3,7 +3,7 @@ import { RouteConfig } from 'vue-router'
 const routes: RouteConfig[] = [
   {
     path: '',
-    component: () => import('layouts/MyLayout/MyLayout.vue'),
+    component: () => import('layouts/myLayout/MyLayout.vue'),
     children: [
       { name: 'Home', path: '/', component: () => import('pages/home/Index.vue') },
       { name: 'Projects', path: '/projects', component: () => import('pages/home/Index.vue') },

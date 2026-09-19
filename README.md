@@ -1,6 +1,6 @@
 # alibougarne.github.io
-My portfolio
-static html and js build with vue js.
 
-[![Ali Bougarne's github stats](https://github-readme-stats.vercel.app/api?username=alibougarne&show_icons=true&theme=radical&count_private=true
-)](https://github.com/alibougarne/github-readme-stats)
+Built output of my portfolio (Quasar/Vue front end; the API runs at https://api.alibougarne.be).
+The source lives in a private repository; this repository only holds what is published.
+
+The previous (2021) site is kept on the `legacy-2021` branch.

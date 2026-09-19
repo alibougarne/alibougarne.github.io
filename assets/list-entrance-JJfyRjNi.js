@@ -1,0 +1,1 @@
+import{t as e}from"./gsap-CvDoa17S.js";function t(t){e.from(t.children,{duration:2,scale:.5,opacity:0,delay:.5,stagger:.2,ease:`elastic`,force3D:!1})}function n(t){e.from(t,{duration:2,y:-10,opacity:0,delay:1,stagger:.2,ease:`power4.out`,force3D:!0})}export{n,t};

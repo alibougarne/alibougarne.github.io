@@ -1,1 +1,0 @@
-import{B as e}from"./render-Q-2_z6S7.js";import{at as t,g as n}from"./index-cdeQU7nB.js";function r(n,r,i){let a;function o(){a!==void 0&&(t.remove(a),a=void 0)}return e(()=>{n.value&&o()}),{removeFromHistory:o,addToHistory(){a={condition:()=>i.value,handler:r},t.add(a)}}}function i(){let e;return{preventBodyScroll(t){t!==e&&(e!==void 0||t)&&(e=t,n(t))}}}export{r as n,i as t};

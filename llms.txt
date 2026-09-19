@@ -22,9 +22,6 @@ Personal portfolio of Ali Bougarne, a software engineer based in Brussels, Belgi
 - [BTM2](https://alibougarne.be/projects/btm2/): A payment management program for SPF Finances made of three microservices: BTM2-CODA (receiving FPS Finance account statements from Bpost), BTM2-PAY (retrieving payments made by FPS Finances), and BTM2-INSTAPY (receiving citizens' instant payments).
 - [Yassir Wallet & Loyalty Platform](https://alibougarne.be/projects/yassir-wallet-loyalty-platform/): A digital wallet for Yassir clients interconnected with Food and Marketplace services, plus a Vouchers/Fidelity loyalty system, management dashboards, and a roles/permissions user management system.
 - [Brandt France B2B Platform](https://alibougarne.be/projects/brandt-france-b2b-platform/): A monolithic business-to-business application for Brandt France's major retailers, plus import/export record management for the Finance Department, Industry Division.
-- [Nreservi](https://alibougarne.be/projects/nreservi/): Nreservi.com, an Algerian online travel agency: hotels in Algeria and abroad, flights and organised tours, booked and paid in dinars, with a space for travel professionals.
-- [Global Axis](https://alibougarne.be/projects/global-axis/): The website of Global Axis, the Bridgestone tyre distributor in Algeria: a catalogue of the tyre ranges, advice on maintenance and a page for careers.
-- [N'gaous](https://alibougarne.be/projects/n-gaous/): The website of N'gaous, an Algerian company that turns fruit into juices, fruit drinks and preserves. The site is offline; the link opens its copy in the Internet Archive.
 - [Internal Enterprise Applications](https://alibougarne.be/projects/internal-enterprise-applications/): A suite of internal applications for Air Algerie: employee management, training management, electronic correspondence, appliance purchasing, and payroll for commercial flight crew.
 
 ## Elsewhere

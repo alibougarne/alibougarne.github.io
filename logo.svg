@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" role="img" aria-label="ab">
+  <title>ab</title>
+  <!-- "a": a round bowl with its stem on the right; "b": the mirror image, with an ascender whose top is cut on a slant.
+       The gap between the stems is the axis of the mark. The three dots grow left to right, like a loading indicator. -->
+  <path fill-rule="evenodd" d="M318 372a198 198 0 1 0 0 396a198 198 0 1 0 0-396zm0 100a98 98 0 1 1 0 196a98 98 0 1 1 0-196z"/>
+  <path d="M418 372H516V768H418z"/>
+  <path fill-rule="evenodd" d="M762 372a198 198 0 1 0 0 396a198 198 0 1 0 0-396zm0 100a98 98 0 1 1 0 196a98 98 0 1 1 0-196z"/>
+  <path d="M564 190H640L662 236V768H564z"/>
+  <circle cx="410" cy="890" r="28"/>
+  <circle cx="540" cy="890" r="38"/>
+  <circle cx="670" cy="890" r="48"/>
+</svg>

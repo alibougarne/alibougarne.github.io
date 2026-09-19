@@ -1,0 +1,1 @@
+import{j as e,s as t,v as n}from"./symbols-0BWchF8n.js";import{r}from"./render-BVkdiFZU.js";var i=t({name:`QCardSection`,props:{tag:{type:String,default:`div`},horizontal:Boolean},setup(t,{slots:i}){let a=n(()=>`q-card__section q-card__section--${t.horizontal?`horiz row no-wrap`:`vert`}`);return()=>e(t.tag,{class:a.value},r(i.default))}});export{i as t};

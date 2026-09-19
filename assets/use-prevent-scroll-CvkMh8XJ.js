@@ -1,0 +1,1 @@
+import{I as e}from"./symbols-0BWchF8n.js";import{ut as t,v as n}from"./index-C29cKwVC.js";function r(n,r,i){let a;function o(){a!==void 0&&(t.remove(a),a=void 0)}return e(()=>{n.value&&o()}),{removeFromHistory:o,addToHistory(){a={condition:()=>i.value,handler:r},t.add(a)}}}function i(){let e;return{preventBodyScroll(t){t!==e&&(e!==void 0||t)&&(e=t,n(t))}}}export{r as n,i as t};

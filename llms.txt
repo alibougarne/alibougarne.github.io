@@ -1,0 +1,29 @@
+# Ali Bougarne
+
+> Software Engineer. Proactive software engineer with strong expertise in full-stack development, specializing in Java and JavaScript. Experienced building scalable backend systems with Spring Boot and Node.js, and responsive, user-friendly frontends with Angular, React, and Vue.js.
+
+Personal portfolio of Ali Bougarne, a software engineer based in Brussels, Belgium: full-stack development with Java, Spring Boot, JavaScript, TypeScript, Angular, React and Vue.js.
+
+## Pages
+
+- [About](https://alibougarne.be/about/): Who Ali Bougarne is, the working languages, and the resume (PDF)
+- [Projects](https://alibougarne.be/projects/): Every project, each with its own page: role, client, period, technologies
+- [Technologies](https://alibougarne.be/tags/): The technologies used and where
+- [Contact](https://alibougarne.be/contact/): A contact form
+
+## Projects
+
+- [SmartHire-Ai Dashboard](https://alibougarne.be/projects/smarthire-ai-dashboard/): The companion admin dashboard for SmartHire-Ai, built with NestJS, Angular, and Postgres, deployed on OpenShift with GitHub webhooks and Tekton pipelines.
+- [SmartHire-Ai](https://alibougarne.be/projects/smarthire-ai/): A hiring platform built with Spring Boot, Angular, and Postgres, deployed on OpenShift with GitHub webhooks and Tekton pipelines. Demo: recruiter@techcorp.com / recruiter123, or register as a new candidate.
+- [Flow-application](https://alibougarne.be/projects/flow-application/): A critical European aviation flow management system built for Eurocontrol. Backend microservices in Spring Boot/MongoDB with a React frontend, RabbitMQ for async communication, and a strong focus on high availability and production stability.
+- [Interval Splitter](https://alibougarne.be/projects/interval-splitter/): Technical test for Eurocontrol: enter a start and an end breakpoint and the app splits the current range into intervals, drawn as bars whose width is proportional to their length. The splitting algorithm is written from scratch (no third-party library, as the brief required) and the input is validated. Hidden tip: when a split leaves single-value intervals (like 21 - 21) they get an animated outline and, once there are two or more, a bracket joins them under a "Magic ranges" label. Built with React, TypeScript and Redux Toolkit, tested with Jest and React Testing Library, deployed on Vercel. Source: github.com/alibougarne/interval-splitter-react.
+- [Fin-Prof2](https://alibougarne.be/projects/fin-prof2/): An application managing declarations on wage deductions for SPF Finances. Built backend features and consumed endpoints to maintain the application as part of a large Agile microservices team.
+- [BTM2](https://alibougarne.be/projects/btm2/): A payment management program for SPF Finances made of three microservices: BTM2-CODA (receiving FPS Finance account statements from Bpost), BTM2-PAY (retrieving payments made by FPS Finances), and BTM2-INSTAPY (receiving citizens' instant payments).
+- [Yassir Wallet & Loyalty Platform](https://alibougarne.be/projects/yassir-wallet-loyalty-platform/): A digital wallet for Yassir clients interconnected with Food and Marketplace services, plus a Vouchers/Fidelity loyalty system, management dashboards, and a roles/permissions user management system.
+- [Brandt France B2B Platform](https://alibougarne.be/projects/brandt-france-b2b-platform/): A monolithic business-to-business application for Brandt France's major retailers, plus import/export record management for the Finance Department, Industry Division.
+- [Internal Enterprise Applications](https://alibougarne.be/projects/internal-enterprise-applications/): A suite of internal applications for Air Algerie: employee management, training management, electronic correspondence, appliance purchasing, and payroll for commercial flight crew.
+
+## Elsewhere
+
+- https://github.com/alibougarne
+- https://www.linkedin.com/in/ali-bougarne-572470117/

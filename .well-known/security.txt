@@ -1,0 +1,5 @@
+# How to report a security problem with this site or its API
+Contact: https://alibougarne.be/contact/
+Expires: 2027-09-19T00:00:00.000Z
+Preferred-Languages: en, fr
+Canonical: https://alibougarne.be/.well-known/security.txt

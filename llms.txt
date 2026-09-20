@@ -24,6 +24,19 @@ Personal portfolio of Ali Bougarne, a software engineer based in Brussels, Belgi
 - [Brandt France B2B Platform](https://alibougarne.be/projects/brandt-france-b2b-platform/): A monolithic business-to-business application for Brandt France's major retailers, plus import/export record management for the Finance Department, Industry Division.
 - [Internal Enterprise Applications](https://alibougarne.be/projects/internal-enterprise-applications/): A suite of internal applications for Air Algerie: employee management, training management, electronic correspondence, appliance purchasing, and payroll for commercial flight crew.
 
+## Experience
+
+- Full Stack Spring Boot/React Developer, Sopra Steria for Eurocontrol (Nov 2024 – May 2026)
+- Senior Full Stack Java/Angular Developer, Genesis Consult for SPF Finances (Jan 2020 – Nov 2024)
+- Senior Full Stack Developer, Yassir (Nov 2018 – Jan 2020)
+- Spring Boot/Vue.js Developer, Cevital Group (Dec 2016 – Nov 2018)
+- Java Developer, Air Algerie (Dec 2013 – Dec 2016)
+
+## Education
+
+- Master's Degree, Computer Science - Distributed Information Systems, Boumerdes University (Sep 2011 – Jun 2013)
+- Bachelor's Degree, Computer Science - Electronics, Boumerdes University (Sep 2007 – Jun 2011)
+
 ## Elsewhere
 
 - https://github.com/alibougarne

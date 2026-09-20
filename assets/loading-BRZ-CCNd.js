@@ -1,0 +1,1 @@
+import{g as e}from"./index-qvL8RLQg.js";var t=250,n=0;async function r(r){n+=1,n===1&&e.show({delay:t});try{return await r()}finally{--n,n===0&&e.hide()}}export{r as t};

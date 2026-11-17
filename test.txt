@@ -1,0 +1,538 @@
+Advanced React
+deep dives, investigations, performance patterns and techniques
+
+by Nadia Makarevich
+Illustrations and book cover design: Nadia
+Makarevich
+Technical review: Andrew Grischenko
+
+
+
+
+Copyright © 2023
+All rights reserved. No part of this book may be
+reproduced, distributed, or transmitted in any form or
+by any means, including photocopying, recording, or
+other electronic or mechanical methods, without the
+prior written permission of the copyright holder,
+except in the case of brief quotations embodied in
+critical reviews and certain other noncommercial uses
+permitted by copyright law.
+This book is provided for informational purposes
+only. The author make no representations or
+warranties with respect to the accuracy or
+completeness of the contents of this book and
+specifically disclaim any implied warranties of
+merchantability or fitness for a particular purpose.
+The information contained in this book is based on
+the author's knowledge and research at the time of
+writing, and the author has made a good faith effort
+to ensure its accuracy.
+However, the advice and strategies contained herein
+may not be suitable for every individual or situation.
+Readers are advised to consult with a professional
+where appropriate. The author shall not be liable for
+any loss, injury, or damage arising from the use or
+reliance on the information presented in this book,
+nor for any errors or omissions in its contents.
+For permission requests, please contact the author at
+support@advanced-react.com
+Table Of Contents
+
+Introduction: how to read this book
+Chapter 1. Intro to re-renders
+  The problem
+  State update, nested components, and re-renders
+  The big re-renders myth
+  Moving state down
+  The danger of custom hooks
+  Key takeaways
+
+Chapter 2. Elements, children as props, and re-renders
+  The problem
+  Elements, Components, and re-renders
+  Children as props
+  Key takeaways
+
+Chapter 3. Configuration concerns with elements as props
+  The problem
+  Elements as props
+  Conditional rendering and performance
+  Default values for the elements from props
+  Key takeaways
+
+Chapter 4. Advanced configuration with render props
+  The problem
+  Render props for rendering Elements
+  Sharing stateful logic: children as render props
+  Hooks replaced render props
+  Key takeaways
+
+Chapter 5. Memoization with useMemo, useCallback and React.memo
+  The problem: comparing values
+  useMemo and useCallback: how they work
+  Antipattern: memoizing props
+  What is React.memo
+  React.memo and props from props
+  React.memo and children
+  React.memo and memoized children (almost)
+  useMemo and expensive calculations
+  Key takeaways
+
+Chapter 6. Deep dive into diffing and reconciliation
+  The Mysterious Bug
+  Diffing and Reconciliation
+  Reconciliation and state update
+  Why we can't define components inside other components
+  The answer to the mystery
+  Reconciliation and arrays
+  Reconciliation and "key"
+  "Key" attribute and memoized list
+  State reset technique
+  Using "key" to force reuse of an existing element
+  Why we don't need keys outside of arrays?
+  Dynamic arrays and normal elements together
+  Key takeaways
+
+Chapter 7. Higher-order components in modern world
+  What is a higher-order component?
+  Enhancing callbacks
+  Enhancing React lifecycle events
+  Intercepting DOM events
+  Key takeaways
+
+Chapter 8. React Context and performance
+  The problem
+  How Context can help
+  Context value change
+  Preventing unnecessary Context re-renders: split providers
+  Reducers and split providers
+  Context selectors
+  Key takeaways
+
+Chapter 9. Refs: from storing data to imperative API
+  Accessing the DOM in React
+  What is Ref?
+  Difference between Ref and state
+  Ref update doesn't trigger re-render
+  Ref update is synchronous and mutable
+  When can we use Ref then?
+  Assigning DOM elements to Ref
+  Passing Ref from parent to child as a prop
+  Passing Ref from parent to child with forwardRef
+  Imperative API with useImperativeHandle
+  Imperative API without useImperativeHandle
+  Key takeaways
+
+Chapter 10. Closures in React
+  The problem
+  JavaScript, scope, and closures
+  The stale closure problem
+  Stale closures in React: useCallback
+  Stale closures in React: Refs
+  Stale closures in React: React.memo
+  Escaping the closure trap with Refs
+  Key takeaways
+
+Chapter 11. Implementing advanced debouncing and throttling with
+Refs
+  What are debouncing and throttling?
+  Debounced callback in React: dealing with re-renders
+  Debounced callback in React: dealing with state inside
+  Key takeaways
+
+Chapter 12. Escaping Flickering UI with useLayoutEffect
+  What is the problem with useEffect?
+  Fixing it with useLayoutEffect
+  Why the fix works: rendering, painting, and browsers
+  Back to useEffect vs useLayoutEffect
+  useLayoutEffect in Next.js and other SSR frameworks
+  Key takeaways
+
+Chapter 13. React portals and why do we need them
+  CSS: absolute positioning
+  Absolute is not that absolute
+  Understanding Stacking Context
+  Position: fixed. Escape the overflow
+  Stacking Context in real apps
+  How React Portal can solve this
+  React lifecycle, re-renders, Context, and Portals
+  CSS, native JavaScript, form submit, and Portals
+  Key takeaways
+
+Chapter 14. Data fetching on the client and performance
+  Types of data fetching
+  Do I really need an external library to fetch data in React?
+  What is a "performant" React app?
+  React lifecycle and data fetching
+  Browser limitations and data fetching
+  Requests waterfalls: how they appear
+  How to solve requests waterfall
+  What about Suspense?
+  Key takeaways
+
+Chapter 15. Data fetching and race conditions
+  What is a Promise?
+  Promises and race conditions
+  Race condition reasons
+  Fixing race conditions: force re-mounting
+  Fixing race conditions: drop incorrect result
+  Fixing race conditions: drop all previous results
+  Fixing race conditions: cancel all previous requests
+  Does Async/await change anything?
+  Key takeaways
+
+Chapter 16. Universal error handling in React
+  Why we should catch errors in React
+  Remembering how to catch errors in JavaScript
+  Simple try/catch in React: how to and caveats
+  React ErrorBoundary component
+  ErrorBoundary component: limitations
+  Catching async errors with ErrorBoundary
+  Can I just use the react-error-boundary library instead?
+  Key takeaways
+
+Forewords
+Introduction: how to read this
+book
+
+React is one of the most popular front-end frameworks out there. There is
+no arguing about that. As a result, the internet is filled with courses, books,
+and blogs about React. Also, the newly released documentation is very
+good. So, what is the point of this book? Is there even a gap it can fill?
+
+I believe there is. I have been writing a blog dedicated to advanced patterns
+for React developers (https://www.developerway.com) for a while now. One
+of the most consistent pieces of feedback I receive is that there is not
+enough advanced-level content.
+
+The docs are very good to start with React. Millions of books, courses, and
+blogs are out there aimed at beginners. But what to do after you've started
+successfully? Where to go if you want to understand how things work on a
+deeper level? What to read if you've been writing React for a while and
+beginner or even intermediate-level courses are not enough? There are not
+many resources available for this. This is the gap this book aims to fill.
+
+The book assumes a certain basic knowledge of React. It expects you to
+understand what the state is and how to use it. What hooks are and how to
+write them. What a component is and how to render components inside
+other components. In other words, it assumes that you can successfully
+write a basic "todo" app.
+
+What it aims to provide is the knowledge that allows you to progress from
+the "basic app" to "React guru in my team". It begins right away with
+investigating and fixing a performance bug. It digs deep into what re-
+renders are and how they affect performance. Walks you through how the
+reconciliation algorithm works, how to deal with closures in React, various
+composition patterns that can replace memoization, how memoization
+works, how to implement debouncing correctly, and much more.
+
+The book is structured into chapters. Each chapter is an independent story,
+investigation, or deep dive focusing on a single topic. However, they are not
+completely isolated: each chapter builds on the knowledge introduced in the
+previous chapters. Also, each chapter tries to introduce only the knowledge
+required to understand the discussed concept, no more. To make the reading
+easier and more focused. It's no use, for example, to start with introducing
+the reconciliation algorithm in order to understand what a re-render is and
+how it affects performance.
+
+So, I recommend reading the book in the order of the chapters. If your
+knowledge already extends beyond the simple "todo" app, it's very likely
+that you'll know a lot of the concepts already. For this case, every chapter
+has a bullet-point list of things you can expect to learn from it at the
+beginning, and a "Key takeaways" section, with a very short bullet-point
+summary of the things introduced. Just skimming through these first will
+give you a good idea of what's inside.
+
+Lastly, I don't differentiate between react , react-dom and the JSX
+transpiler in the book. Technically, it's the react-dom library that is
+responsible for things like Portals, and transpilers such as Babel convert
+JSX syntax into functions. However, for understanding the content of the
+book, this distinction doesn't really matter. We use all three without even
+noticing when writing interfaces for the web. Therefore, for simplicity,
+everything is referred to as "React".
+
+Hope you're ready to start now! We'll investigate a performance problem
+right away, learn the big re-renders myth, and look into the simplest but
+very powerful performance optimization pattern with composition. Ready?
+Let's get started!
+Chapter 1. Intro to re-renders
+
+Let's dive right in, shall we? And let's talk about performance right away:
+it's one of the most important topics these days when it comes to building
+applications, and as a result, it's an overarching theme of this book.
+
+And when it comes to React and performance in React, it's crucial to
+understand re-renders and their influence. How they are triggered, how they
+propagate through the app, what happens when a component re-renders and
+why, and why we need them in the first place.
+
+This chapter introduces these concepts, which will be explored in more
+detail in the next few chapters. And to make it more fun, let's make it in the
+form of an investigation. Let's introduce a very common performance
+problem in an app, look at what's happening because of it, and how to fix it
+with a very simple composition technique. While doing so, you will learn:
+
+     What a re-render is, and why we need it.
+     What the initial source of all re-renders is.
+     How React propagates re-renders through the app.
+     The big re-renders myth and why props changing by themselves
+     doesn't matter.
+     The "moving state down" technique to improve performance.
+     Why hooks can be dangerous when it comes to re-renders.
+
+
+
+
+The problem
+Imagine yourself as a developer who inherited a large, complicated, and
+very performance-sensitive app. Lots of things are happening there, many
+people have worked on it over the years, millions of customers are using it
+now. As your first task on the job, you are asked to add a simple button that
+opens a modal dialog right at the top of this app.
+
+You look at the code and find the place where the dialog should be
+triggered:
+
+
+   const App = () => {
+      // lots of code here
+      return (
+         <div className="layout">
+           {/* button should go
+   somewhere here */}
+           <VerySlowComponent />
+           <BunchOfStuff />
+           <OtherStuffAlsoComplicated
+    />
+         </div>
+      );
+   };
+
+Then you implement it. The task seems trivial. We've all done it hundreds
+of times:
+
+
+   const App = () => {
+     // add some state
+     const [isOpen, setIsOpen] =
+   useState(false);
+
+      return (
+         <div className="layout">
+           {/* add the button */}
+           <Button onClick={() =>
+   setIsOpen(true)}>
+             Open dialog
+           </Button>
+           {/* add the dialog itself
+   */}
+           {isOpen ? (
+             <ModalDialog onClose={()
+    => setIsOpen(false)} />
+           ) : null}
+           <VerySlowComponent />
+           <BunchOfStuff />
+           <OtherStuffAlsoComplicated
+    />
+         </div>
+      );
+   };
+
+Just add some state that holds whether the dialog is open or closed. Add the
+button that triggers the state update on click. And the dialog itself that is
+rendered if the state variable is true .
+
+You start the app, try it out - and oops. It takes almost a second to open that
+simple dialog!
+
+
+
+  Interactive example and full code
+  https://advanced-react.com/examples/01/01
+
+
+People experienced with dealing with React performance might be tempted
+to say something like: "Ah, of course! You're re-rendering the whole app
+there, you just need to wrap everything in React.memo and use
+ useCallback hooks to prevent it." And technically this is true. But don't
+rush. Memoization is completely unnecessary here and will do more harm
+than good. There is a more efficient way.
+
+But first, let's review what exactly is happening here and why.
+
+
+
+
+State update, nested
+components, and re-renders
+Let's start from the beginning: the life of our component and the most
+important stages of it that we need to care about when we talk about
+performance. Those are: mounting, unmounting, and re-rendering.
+
+When a component first appears on the screen, we call it mounting. This is
+when React creates this component's instance for the first time, initializes
+its state, runs its hooks, and appends elements to the DOM. The end result -
+we see whatever we render in this component on the screen.
+Then, there is unmounting: this is when React detects that a component is
+not needed anymore. So it does the final clean-up, destroys this
+component's instance and everything associated with it, like the
+component's state, and finally removes the DOM element associated with it.
+
+And, finally, re-rendering. This is when React updates an already existing
+component with some new information. Compared to mounting, re-
+rendering is lightweight: React just re-uses the already existing instance,
+runs the hooks, does all the necessary calculations, and updates the existing
+DOM element with the new attributes.
+
+Every re-render starts with the state. In React, every time we use a hook
+like useState , useReducer , or any of the external state management
+libraries like Redux, we add interactivity to a component. From now on, a
+component will have a piece of data that is preserved throughout its
+lifecycle. If something happens that needs an interactive response, like a
+user clicking a button or some external data coming through, we update the
+state with the new data.
+
+Re-rendering is one of the most important things to understand in React.
+This is when React updates the component with the new data and triggers
+all the hooks that depend on that data. Without these, there will be no data
+updates in React and, as a result, no interactivity. The app will be
+completely static. And state update is the initial source of all re-renders in
+React apps. If we take our initial app as an example:
+
+
+   const App = () => {
+     const [isOpen, setIsOpen] =
+   useState(false);
+
+        return (
+         <Button onClick={() =>
+   setIsOpen(true)}>
+           Open dialog
+         </Button>
+      );
+   };
+
+When we click on the Button , we trigger the setIsOpen setter function:
+we update the isOpen state with the new value from false to true . As a
+result, the App component that holds that state re-renders itself.
+
+After the state is updated and the App component re-renders, the new data
+needs to be delivered to other components that depend on it. React does this
+automatically for us: it grabs all the components that the initial component
+renders inside, re-renders those, then re-renders components nested inside
+of them, and so on until it reaches the end of the chain of components.
+
+If you imagine a typical React app as a tree, everything down from where
+the state update was initiated will be re-rendered.
+In the case of our app, everything that it renders, all those very slow
+components, will be re-rendered when the state changes:
+
+
+   const App = () => {
+     const [isOpen, setIsOpen] =
+   useState(false);
+
+     // everything that is
+   returned here will be re-
+   rendered when the state is
+   updated
+     return (
+         <div className="layout">
+           <Button onClick={() =>
+   setIsOpen(true)}>
+             Open dialog
+           </Button>
+           {isOpen ? (
+             <ModalDialog onClose={()
+    => setIsOpen(false)} />
+           ) : null}
+           <VerySlowComponent />
+           <BunchOfStuff />
+           <OtherStuffAlsoComplicated
+    />
+         </div>
+      );
+   };
+
+As a result, it takes almost a second to open the dialog - React needs to re-
+render everything before the dialog can appear on the screen.
+
+The important thing to remember here is that React never goes "up" the
+render tree when it re-renders components. If a state update originated
+somewhere in the middle of the components tree, only components "down"
+the tree will re-render.
+The only way for components at the "bottom" to affect components at the
+"top" of the hierarchy is for them either to explicitly call state update in the
+"top" components or to pass components as functions.
+
+
+
+
+The big re-renders myth
+Have you noticed that I haven't mentioned anything about props here? You
+might have heard this statement: "Component re-renders when its props
+change." It's one of the most common misconceptions in React: everyone
+believes it, no one doubts it, and it's just not true.
+
+Normal React behavior is that if a state update is triggered, React will re-
+render all the nested components regardless of their props. And if a state
+update is not triggered, then changing props will be just "swallowed": React
+doesn't monitor them.
+
+If I have a component with props, and I try to change those props without
+triggering a state update, something like this:
+
+
+   const App = () => {
+     // local variable won't work
+     let isOpen = false;
+
+      return (
+         <div className="layout">
+           {/* nothing will happen
+   */}
+           <Button onClick={() =>
+   (isOpen = true)}>
+             Open dialog
+           </Button>
+           {/* will never show up */}
+           {isOpen ? (
+             <ModalDialog onClose={()
+    => (isOpen = false)} />
+           ) : null}
+         </div>
+      );
+   };
+It just won't work. When the Button is clicked, the local isOpen variable
+will change. But the React lifecycle is not triggered, so the render output is
+never updated, and the ModalDialog will never show up.
+
+
+
+  Interactive example and full code
+  https://advanced-react.com/examples/01/02
+
+
+In the context of re-renders, whether props have changed or not on a
+component matters only in one case: if the said component is wrapped in
+the React.memo higher-order component. Then, and only then, will React
+stop its natural chain of re-renders and first check the props. If none of the
+props change, then re-renders will stop there. If even one single prop
+changes, they will continue as usual.
+Preventing re-renders with memoization properly is a complicated topic
+with several caveats. Read about it in more detail in Chapter 5.
+Memoization with useMemo, useCallback and React.memo.
+
+
+
+
+Moving state down
+Now that it's clear how React re-renders components, it's time to apply this
+knowledge to the original problem and fix it. Let's take a closer look at the
+code, in particular where we use the modal dialog state:
+
+
+   const App = () => {
+     // our state is declared here
+     const [isOpen, set

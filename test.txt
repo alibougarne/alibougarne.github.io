@@ -4,40 +4,13 @@ deep dives, investigations, performance patterns and techniques
 by Nadia Makarevich
 Illustrations and book cover design: Nadia
 Makarevich
-Technical review: Andrew Grischenko
+Technical review: 
 
 
 
 
-Copyright © 2023
-All rights reserved. No part of this book may be
-reproduced, distributed, or transmitted in any form or
-by any means, including photocopying, recording, or
-other electronic or mechanical methods, without the
-prior written permission of the copyright holder,
-except in the case of brief quotations embodied in
-critical reviews and certain other noncommercial uses
-permitted by copyright law.
-This book is provided for informational purposes
-only. The author make no representations or
-warranties with respect to the accuracy or
-completeness of the contents of this book and
-specifically disclaim any implied warranties of
-merchantability or fitness for a particular purpose.
-The information contained in this book is based on
-the author's knowledge and research at the time of
-writing, and the author has made a good faith effort
-to ensure its accuracy.
-However, the advice and strategies contained herein
-may not be suitable for every individual or situation.
-Readers are advised to consult with a professional
-where appropriate. The author shall not be liable for
-any loss, injury, or damage arising from the use or
-reliance on the information presented in this book,
-nor for any errors or omissions in its contents.
-For permission requests, please contact the author at
-support@advanced-react.com
-Table Of Contents
+
+
 
 Introduction: how to read this book
 Chapter 1. Intro to re-renders
